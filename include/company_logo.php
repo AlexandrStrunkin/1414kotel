@@ -1,0 +1,1 @@
+<a href="<?=SITE_DIR?>"><img width="232" src="/bitrix/templates/elektro_flat/images/logo dlya 1414.png" height="86"></a>
