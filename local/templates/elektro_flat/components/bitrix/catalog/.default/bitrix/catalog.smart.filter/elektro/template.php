@@ -369,7 +369,7 @@ CJSCore::Init(array("fx"));?>
 										<div class="custom-forms <?=($arItem['CODE'] == 'COLOR') ? 'colors' : ''?>">
 											<input type="checkbox" id="<?=$arOption['CONTROL_ID']?>" name="<?=$arOption['CONTROL_NAME']?>" <?=$arOption["CHECKED"] ? "checked=\"checked\"" : ""?> <?=$arOption["DISABLED"] ? "disabled=\"disabled\"" : ""?> value="<?=$arOption['HTML_VALUE']?>" onclick="smartFilter.click(this)" />
 											<?if($arItem["CODE"] != "COLOR"):?>
-												<label data-role="label_<?=$arOption['CONTROL_ID']?>" <?=$arOption["DISABLED"] ? "class=\"disabled\"" : ""?> for="<?=$arOption['CONTROL_ID']?>"><?=$arOption["VALUE"]?><?if($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($arOption["ELEMENT_COUNT"])):?><span class="count" data-role="count_<?=$arOption["CONTROL_ID"]?>"><?=$arOption["ELEMENT_COUNT"]?></span><?endif;?></label>
+												<label data-role="label_<?=$arOption['CONTROL_ID']?>" <?=$arOption["DISABLED"] ? "class=\"disabled\"" : ""?> for="<?=$arOption['CONTROL_ID']?>"><?=trim($arOption["VALUE"], ".")?><?if($arParams["DISPLAY_ELEMENT_COUNT"] !== "N" && isset($arOption["ELEMENT_COUNT"])):?><span class="count" data-role="count_<?=$arOption["CONTROL_ID"]?>"><?=$arOption["ELEMENT_COUNT"]?></span><?endif;?></label>
 											<?elseif($arItem["CODE"] == "COLOR"):
 												if(is_array($arOption["PICT"])):?>
 													<label data-role="label_<?=$arOption['CONTROL_ID']?>" for="<?=$arOption['CONTROL_ID']?>" <?=$arOption["DISABLED"] ? "class=\"disabled\"" : ""?> title="<?=$arOption['NAME']?>">

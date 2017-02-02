@@ -11,7 +11,7 @@ while($ar_result = $db_list->Fetch()) {
     }                                  
     $arResult["ITEMS"][$ar_result['ID']]['DETAIL_PAGE_URL'] = $ar_result['CODE'].'/';
 }                            
-
+                   
 foreach($arResult["ITEMS"] as $key => $arItem) {
 	//PREVIEW_PICTURE//
 	if(is_array($arItem["PREVIEW_PICTURE"])) {

@@ -1,7 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 
 $this->setFrameMode(true);?>
-
+          
 <?$APPLICATION->IncludeComponent("bitrix:news.list", "",
 	Array(
 		"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
@@ -55,8 +55,8 @@ $this->setFrameMode(true);?>
 		"IBLOCK_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["news"],		
 	),
 	$component
-);?>
-
+);?>   
+       
 <?//DESCRIPTION//
 if(empty($_REQUEST["PAGEN_1"]) || (!empty($_REQUEST["PAGEN_1"]) && $_REQUEST["PAGEN_1"] == "1")):?>
 	<div class="clr"></div>
