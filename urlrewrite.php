@@ -25,16 +25,16 @@ $arUrlRewrite = array(
 		"PATH" => "/reviews/index.php",
 	),
 	array(
-		"CONDITION" => "#^/vendors/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/vendors/index.php",
-	),
-	array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
 		"PATH" => "/catalog/index.php",
+	),
+	array(
+		"CONDITION" => "#^/vendors/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/vendors/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",
