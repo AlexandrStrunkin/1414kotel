@@ -5,8 +5,8 @@ $APPLICATION->SetTitle("Производители");?>
 	"bitrix:news", 
 	"vendors", 
 	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "14",
+		"IBLOCK_TYPE" => "iblock_filter",
+		"IBLOCK_ID" => "23",
 		"NEWS_COUNT" => "24",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -93,28 +93,35 @@ $APPLICATION->SetTitle("Производители");?>
 		"ELEMENT_SORT_FIELD2" => "SORT",
 		"ELEMENT_SORT_ORDER2" => "ASC",
 		"DISPLAY_COMPARE" => "Y",
-		"PROPERTY_CODE_MOD" => array(
-			0 => "",
+		"PROPERTY_CODE_MOD" => array(     
+			0 => "GUARANTEE",
 			1 => "",
 		),
 		"OFFERS_FIELD_CODE" => array(
 			0 => "",
 			1 => "",
 		),
-		"OFFERS_PROPERTY_CODE" => array(
-			0 => "",
-			1 => "",
+		"OFFERS_PROPERTY_CODE" => array(        
+			0 => "COLOR",
+			1 => "PROP2",
+			2 => "PROP3",
+			3 => "",
 		),
 		"OFFERS_SORT_FIELD" => "shows",
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_FIELD2" => "shows",
 		"OFFERS_SORT_ORDER2" => "asc",
 		"PRICE_CODE" => array(
+
+			0 => "BASE",
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
 		"CONVERT_CURRENCY" => "N",
-		"OFFERS_CART_PROPERTIES" => array(
+		"OFFERS_CART_PROPERTIES" => array(    
+			0 => "COLOR",
+			1 => "PROP2",
+			2 => "PROP3",
 		),
 		"USE_BIG_DATA" => "N",
 		"BIG_DATA_RCM_TYPE" => "any",
@@ -122,15 +129,11 @@ $APPLICATION->SetTitle("Производители");?>
 			0 => "",
 			1 => "",
 		),
-		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO",
-		"DISPLAY_DATE" => "Y",
-		"DISPLAY_PICTURE" => "Y",
-		"DISPLAY_PREVIEW_TEXT" => "Y",
+
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
+			"detail" => "#SECTION_CODE#/",
 		)
 	),
 	false
