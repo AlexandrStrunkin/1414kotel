@@ -1,10 +1,12 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Производители");?>
 
-<?$APPLICATION->IncludeComponent("bitrix:news", "vendors",
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news", 
+	"vendors", 
 	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "14",
+		"IBLOCK_TYPE" => "iblock_filter",
+		"IBLOCK_ID" => "23",
 		"NEWS_COUNT" => "24",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
@@ -39,16 +41,28 @@ $APPLICATION->SetTitle("Производители");?>
 		"USE_PERMISSIONS" => "N",
 		"PREVIEW_TRUNCATE_LEN" => "",
 		"LIST_ACTIVE_DATE_FORMAT" => "",
-		"LIST_FIELD_CODE" => array(),
-		"LIST_PROPERTY_CODE" => array(),
+		"LIST_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"DISPLAY_NAME" => "Y",
-		"META_KEYWORDS" => "KEYWORDS",
-		"META_DESCRIPTION" => "DESCRIPTION",
-		"BROWSER_TITLE" => "TITLE",
+		"META_KEYWORDS" => "-",
+		"META_DESCRIPTION" => "-",
+		"BROWSER_TITLE" => "-",
 		"DETAIL_ACTIVE_DATE_FORMAT" => "",
-		"DETAIL_FIELD_CODE" => array(),
-		"DETAIL_PROPERTY_CODE" => array(),
+		"DETAIL_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"DETAIL_DISPLAY_TOP_PAGER" => "N",
 		"DETAIL_DISPLAY_BOTTOM_PAGER" => "N",
 		"DETAIL_PAGER_TITLE" => "Страница",
@@ -61,7 +75,7 @@ $APPLICATION->SetTitle("Производители");?>
 		"PAGER_TEMPLATE" => "arrows",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "3600",
-		"PAGER_SHOW_ALL" => "N",		
+		"PAGER_SHOW_ALL" => "N",
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"COMPONENT_TEMPLATE" => "vendors",
 		"SET_LAST_MODIFIED" => "N",
@@ -69,7 +83,7 @@ $APPLICATION->SetTitle("Производители");?>
 		"DETAIL_SET_CANONICAL_URL" => "N",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SHOW_404" => "Y",
-		"FILE_404" => "",		
+		"FILE_404" => "",
 		"IBLOCK_TYPE_CATALOG" => "catalog",
 		"IBLOCK_ID_CATALOG" => "16",
 		"DISPLAY_IMG_WIDTH" => "178",
@@ -77,23 +91,28 @@ $APPLICATION->SetTitle("Производители");?>
 		"ELEMENT_SORT_FIELD" => "CATALOG_AVAILABLE",
 		"ELEMENT_SORT_ORDER" => "desc",
 		"ELEMENT_SORT_FIELD2" => "SORT",
-		"ELEMENT_SORT_ORDER2" => "ASC",		
-		"DISPLAY_COMPARE" => "Y",		
+		"ELEMENT_SORT_ORDER2" => "ASC",
+		"DISPLAY_COMPARE" => "Y",
 		"PROPERTY_CODE_MOD" => array(
-			0 => "GUARANTEE"
+			0 => "GUARANTEE",
+			1 => "",
 		),
-		"OFFERS_FIELD_CODE" => array(),
+		"OFFERS_FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"OFFERS_PROPERTY_CODE" => array(
 			0 => "COLOR",
 			1 => "PROP2",
-			2 => "PROP3"
+			2 => "PROP3",
+			3 => "",
 		),
 		"OFFERS_SORT_FIELD" => "sort",
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER2" => "asc",
 		"PRICE_CODE" => array(
-			0 => "BASE"
+			0 => "BASE",
 		),
 		"PRICE_VAT_INCLUDE" => "Y",
 		"HIDE_NOT_AVAILABLE" => "N",
@@ -101,14 +120,18 @@ $APPLICATION->SetTitle("Производители");?>
 		"OFFERS_CART_PROPERTIES" => array(
 			0 => "COLOR",
 			1 => "PROP2",
-			2 => "PROP3"
+			2 => "PROP3",
 		),
 		"USE_BIG_DATA" => "Y",
 		"BIG_DATA_RCM_TYPE" => "any",
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"news" => "",
 			"section" => "",
-			"detail" => "#ELEMENT_CODE#/",
+			"detail" => "#SECTION_CODE#/",
 		)
 	),
 	false
