@@ -291,15 +291,15 @@ if(is_array($arResult["MORE_PHOTO"]) && count($arResult["MORE_PHOTO"]) > 0) {
 	}
 }
 
-//MANUFACTURER//
+//MANUFACTURER//             
 if(!empty($arResult["PROPERTIES"]["MANUFACTURER"]["VALUE"])):
-	$obElement = CIBlockElement::GetByID($arResult["PROPERTIES"]["MANUFACTURER"]["VALUE"]);
-	if($arEl = $obElement->GetNext()):
+	$obElement = CIBlockSection::GetByID($arResult["PROPERTIES"]["MANUFACTURER"]["VALUE"]);
+	if($arEl = $obElement->GetNext()): 
 		$arResult["PROPERTIES"]["MANUFACTURER"]["NAME"] = $arEl["NAME"];
 		
 		//PREVIEW_PICTURE//
-		if($arEl["PREVIEW_PICTURE"] > 0) {
-			$arFile = CFile::GetFileArray($arEl["PREVIEW_PICTURE"]);		
+		if($arEl["PICTURE"] > 0) {
+			$arFile = CFile::GetFileArray($arEl["PICTURE"]);		
 			if($arFile["WIDTH"] > 69 || $arFile["HEIGHT"] > 24) {
 				$arFileTmp = CFile::ResizeImageGet(
 					$arFile,

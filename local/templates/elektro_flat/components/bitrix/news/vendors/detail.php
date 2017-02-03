@@ -12,16 +12,14 @@ if(!Loader::includeModule("iblock"))
 
 Loc::loadMessages(__FILE__);
 
-global $arSetting;
-                     
+global $arSetting;                    
                                    
 $arFilter = Array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'CODE' => $arResult['VARIABLES']['SECTION_CODE']);
 $db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter, true); 
-while($ar_result = $db_list->Fetch()) {     
-     $arResult["SECTION_INFO"]["ELEMENT_ID"] = $ar_result['ID'];
-     $arResult["SECTION_INFO"]["ELEMENT_CODE"] = $ar_result['CODE'];                                           
+while($ar_result = $db_list->Fetch()) {  
+    $arResult["SECTION_INFO"]["ELEMENT_ID"] = $ar_result['ID'];
+    $arResult["SECTION_INFO"]["ELEMENT_CODE"] = $ar_result['CODE'];                                          
 }        
-
 //CURRENT_VENDOR//
 $arFilter = array(
 	"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -50,7 +48,7 @@ if($obCache->InitCache($arParams["CACHE_TIME"], $cache_id, $cache_dir)) {
 		$arCurVendor["NAME"] = $arElement["NAME"]; 
 		if($arElement["PREVIEW_PICTURE"] > 0)
 			$arCurVendor["PREVIEW_PICTURE"] = CFile::GetFileArray($arElement["PREVIEW_PICTURE"]);
-		$arCurVendor["PREVIEW_TEXT"] = $arElement["PREVIEW_TEXT"];       
+		$arCurVendor["PREVIEW_TEXT"] = $arElement["DESCRIPTION"]; 
 		$ipropValues = new Iblock\InheritedProperty\ElementValues($arElement["IBLOCK_ID"], $arElement["ID"]);
 		$arCurVendor["IPROPERTY_VALUES"] = $ipropValues->getValues();
 		$CACHE_MANAGER->EndTagCache();
@@ -65,7 +63,7 @@ if($obCache->InitCache($arParams["CACHE_TIME"], $cache_id, $cache_dir)) {
 			,$arParams["FILE_404"]
 		);
 	}
-}
+}                     
          
 if($arSetting["VENDORS_VIEW"]["VALUE"] == "SECTIONS"):
 	//SECTIONS//?>

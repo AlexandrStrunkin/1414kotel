@@ -5,8 +5,8 @@ $APPLICATION->SetTitle("Производители");?>
 	"bitrix:news", 
 	"vendors", 
 	array(
-		"IBLOCK_TYPE" => "catalog_filter",
-		"IBLOCK_ID" => "22",
+		"IBLOCK_TYPE" => "iblock_filter",
+		"IBLOCK_ID" => "23",
 		"NEWS_COUNT" => "24",
 		"USE_SEARCH" => "N",
 		"USE_RSS" => "N",
