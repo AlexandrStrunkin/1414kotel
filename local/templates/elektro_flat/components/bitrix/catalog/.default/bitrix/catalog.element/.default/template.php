@@ -199,7 +199,7 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 												<span class="discount">%</span>
 											<?endif;
 										endif;?>
-									</div>
+									</div>                                           
 									<?if(is_array($arResult["PROPERTIES"]["MANUFACTURER"]["PREVIEW_PICTURE"])):?>
 										<img class="manufacturer" src="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['SRC']?>" width="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['WIDTH']?>" height="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['HEIGHT']?>" alt="<?=$arResult['PROPERTIES']['MANUFACTURER']['NAME']?>" title="<?=$arResult['PROPERTIES']['MANUFACTURER']['NAME']?>" />
 									<?endif;?>
@@ -222,7 +222,7 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 							</div>
 							<div class="sticker">
 								<?=$sticker?>
-							</div>
+							</div> 
 							<?if(is_array($arResult["PROPERTIES"]["MANUFACTURER"]["PREVIEW_PICTURE"])):?>
 								<img class="manufacturer" src="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['SRC']?>" width="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['WIDTH']?>" height="<?=$arResult['PROPERTIES']['MANUFACTURER']['PREVIEW_PICTURE']['HEIGHT']?>" alt="<?=$arResult['PROPERTIES']['MANUFACTURER']['NAME']?>" title="<?=$arResult['PROPERTIES']['MANUFACTURER']['NAME']?>" />
 							<?endif;?>
@@ -998,7 +998,7 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 						<div class="h4"><?=GetMessage("CATALOG_ELEMENT_PROPERTIES")?></div>
 						<?//DETAIL_PROPERTIES//
 						if(!empty($arResult["DISPLAY_PROPERTIES"])):
-							foreach($arResult["DISPLAY_PROPERTIES"] as $k => $v):?>
+							foreach($arResult["DISPLAY_PROPERTIES"] as $k => $v):?>   
 								<div class="catalog-detail-property">
 									<div class="name"><?=$v["NAME"]?></div>
 									<?if(isset($v["FILTER_HINT"]) && !empty($v["FILTER_HINT"])):?>
@@ -1007,6 +1007,7 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 										</div>
 									<?endif;?>
 									<div class="dots"></div>
+                                    <?$v["DISPLAY_VALUE"] = preg_replace('~<a\b[^>]*+>|</a\b[^>]*+>~', '', $v["DISPLAY_VALUE"]);?>
 									<div class="val"><?=is_array($v["DISPLAY_VALUE"]) ? implode(", ", $v["DISPLAY_VALUE"]) : $v["DISPLAY_VALUE"];?></div>
 								</div>
 							<?endforeach;

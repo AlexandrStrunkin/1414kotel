@@ -65,15 +65,15 @@ foreach($arResult["ITEMS"] as $key => $arElement) {
 		}
 	}
 
-	//MANUFACTURER//
-	if(!empty($arElement["PROPERTIES"]["MANUFACTURER"]["VALUE"])) {
-		$obElement = CIBlockElement::GetByID($arElement["PROPERTIES"]["MANUFACTURER"]["VALUE"]);
-		if($arEl = $obElement->GetNext()) {
-			$arResult["ITEMS"][$key]["PROPERTIES"]["MANUFACTURER"]["NAME"] = $arEl["NAME"];
-			
-			//PREVIEW_PICTURE//
-			if($arEl["PREVIEW_PICTURE"] > 0) {
-				$arFile = CFile::GetFileArray($arEl["PREVIEW_PICTURE"]);		
+    //MANUFACTURER//
+    if(!empty($arElement["PROPERTIES"]["MANUFACTURER"]["VALUE"])) {
+        $obElement = CIBlockSection::GetByID($arElement["PROPERTIES"]["MANUFACTURER"]["VALUE"]);
+        if($arEl = $obElement->GetNext()) {
+            $arResult["ITEMS"][$key]["PROPERTIES"]["MANUFACTURER"]["NAME"] = $arEl["NAME"];
+            
+            //PREVIEW_PICTURE//
+            if($arEl["PICTURE"] > 0) {
+                $arFile = CFile::GetFileArray($arEl["PICTURE"]);		
 				if($arFile["WIDTH"] > 69 || $arFile["HEIGHT"] > 24) {
 					$arFileTmp = CFile::ResizeImageGet(
 						$arFile,
