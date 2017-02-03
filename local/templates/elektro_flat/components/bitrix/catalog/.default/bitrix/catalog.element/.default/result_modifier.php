@@ -820,7 +820,7 @@ foreach($arSKUPropList as $key => $arSKUProp) {
 }
 
 $arResult["SKU_PROPS"] = $arSKUPropList;
-
+                         
 //CACHE_KEYS//
 $this->__component->SetResultCacheKeys(
 	array(
@@ -834,4 +834,4 @@ $this->__component->SetResultCacheKeys(
 		"OFFERS",
 		"OFFERS_IBLOCK"
 	)
-);?>
+);?>                      

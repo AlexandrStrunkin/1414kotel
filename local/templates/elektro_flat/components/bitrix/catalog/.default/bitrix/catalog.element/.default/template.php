@@ -1025,7 +1025,14 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 									<div class="val"><?=$sPropOffer["VALUE"]?></div>
 								</div>
 							<?endforeach;
-						endif;?>
+						endif;
+                        if ((!empty($arResult['CATALOG_WIDTH'])) && (!empty($arResult['CATALOG_LENGTH'])) && (!empty($arResult['CATALOG_HEIGHT']))) { ?>                        
+                        <div class="catalog-detail-property offer-property">
+                            <div class="name"><?=GetMessage("CATALOG_ELEMENT_SIZE")?></div> 
+                            <div class="dots"></div>
+                            <div class="val"><?=$arResult['CATALOG_HEIGHT']?>x<?=$arResult['CATALOG_WIDTH']?>x<?=$arResult['CATALOG_LENGTH']?></div>
+                        </div>                            
+                        <? } ?>
 					</div>
 				<?endif;?>
 			</div>
@@ -1372,11 +1379,11 @@ $strTitle = (isset($arResult["IPROPERTY_VALUES"]["ELEMENT_DETAIL_PICTURE_FILE_TI
 					<a href="#tab<?=$i?>"><span><?=$arResult["PROPERTIES"]["FILES_DOCS"]["NAME"]?></span></a>
 				</li>
 				<?$i++;
-			endif;/*?>
-			<li class="tabs__tab">
+			endif;?>
+			<li class="tabs__tab" style="display: none">
 				<a href="#tab<?=$i?>"><span><?=GetMessage("CATALOG_ELEMENT_REVIEWS")?> <span class="reviews_count"></span></span></a>
 			</li>
-			<?*/$i++;
+			<?$i++;
 			if($arParams["USE_STORE"] == "Y" && ((isset($arResult["OFFERS"]) && !empty($arResult["OFFERS"]) && $arSetting["OFFERS_VIEW"]["VALUE"] != "LIST") || (!isset($arResult["OFFERS"]) || empty($arResult["OFFERS"])))):?>
 				<li class="tabs__tab">
 					<a href="#tab<?=$i?>"><span><?=GetMessage("CATALOG_ELEMENT_SHOPS")?></span></a>
