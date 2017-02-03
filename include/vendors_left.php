@@ -1,15 +1,23 @@
-<?$APPLICATION->IncludeComponent("bitrix:news.list", "vendors_left", 
+<?$APPLICATION->IncludeComponent(
+	"bitrix:news.list", 
+	"vendors_left", 
 	array(
-		"IBLOCK_TYPE" => "catalog",
-		"IBLOCK_ID" => "14",
-		"NEWS_COUNT" => "10",	
+		"IBLOCK_TYPE" => "iblock_filter",
+		"IBLOCK_ID" => "23",
+		"NEWS_COUNT" => "10",
 		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "ASC",
 		"SORT_BY2" => "NAME",
 		"SORT_ORDER2" => "ASC",
 		"FILTER_NAME" => "",
-		"FIELD_CODE" => array(),
-		"PROPERTY_CODE" => array(),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"CHECK_DATES" => "Y",
 		"DETAIL_URL" => "",
 		"AJAX_MODE" => "N",
@@ -40,7 +48,19 @@
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "3600",
 		"PAGER_SHOW_ALL" => "N",
-		"AJAX_OPTION_ADDITIONAL" => ""
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"COMPONENT_TEMPLATE" => "vendors_left",
+		"SET_BROWSER_TITLE" => "Y",
+		"SET_META_KEYWORDS" => "Y",
+		"SET_META_DESCRIPTION" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"INCLUDE_SUBSECTIONS" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"PAGER_TITLE" => "Новости",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"SHOW_404" => "N",
+		"MESSAGE_404" => ""
 	),
 	false
 );?>
