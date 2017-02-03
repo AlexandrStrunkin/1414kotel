@@ -6,7 +6,7 @@ if(count($arResult["ITEMS"]) < 1)
 	return;
 ?>
 
-<div class="vendors-list">
+<div class="vendors-list"> 
 	<?foreach($arResult["ITEMS"] as $arItem):?>
 		<p class="vendors-item">
 			<a rel="nofollow" href="<?echo $arItem["DETAIL_PAGE_URL"]?>"><?echo $arItem["NAME"]?></a>
