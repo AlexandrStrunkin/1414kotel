@@ -13,7 +13,8 @@ if(!Loader::includeModule("iblock"))
 Loc::loadMessages(__FILE__);
 
 global $arSetting;                    
-                                   
+
+arshow($arResult['VARIABLES']);                                   
 $arFilter = Array('IBLOCK_ID' => $arParams['IBLOCK_ID'], 'CODE' => $arResult['VARIABLES']['SECTION_CODE']);
 $db_list = CIBlockSection::GetList(Array($by=>$order), $arFilter, true); 
 while($ar_result = $db_list->Fetch()) {  
@@ -49,8 +50,8 @@ if($obCache->InitCache($arParams["CACHE_TIME"], $cache_id, $cache_dir)) {
 		if($arElement["PREVIEW_PICTURE"] > 0)
 			$arCurVendor["PREVIEW_PICTURE"] = CFile::GetFileArray($arElement["PREVIEW_PICTURE"]);
 		$arCurVendor["PREVIEW_TEXT"] = $arElement["DESCRIPTION"]; 
-		$ipropValues = new Iblock\InheritedProperty\ElementValues($arElement["IBLOCK_ID"], $arElement["ID"]);
-		$arCurVendor["IPROPERTY_VALUES"] = $ipropValues->getValues();
+		$ipropValues = new Iblock\InheritedProperty\SectionValues($arElement["IBLOCK_ID"], $arElement["ID"]);
+		$arCurVendor["IPROPERTY_VALUES"] = $ipropValues->getValues();     
 		$CACHE_MANAGER->EndTagCache();
 		$obCache->EndDataCache($arCurVendor);
 	} else {
@@ -398,13 +399,13 @@ if(!empty($arRecomData)):
 endif;
 
 //PAGE_TITLE//
-$APPLICATION->SetTitle(!empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_PAGE_TITLE"] : $arCurVendor["NAME"]);
+$APPLICATION->SetTitle(!empty($arCurVendor["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["SECTION_PAGE_TITLE"] : $arCurVendor["NAME"]);
 if(!$_REQUEST["PAGEN_1"] || empty($_REQUEST["PAGEN_1"]) || $_REQUEST["PAGEN_1"] <= 1):
-	$APPLICATION->SetPageProperty("title", !empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_TITLE"] : $arCurVendor["NAME"]);
-	$APPLICATION->SetPageProperty("keywords", !empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_KEYWORDS"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_KEYWORDS"] : "");
-	$APPLICATION->SetPageProperty("description", !empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_DESCRIPTION"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_DESCRIPTION"] : "");
+	$APPLICATION->SetPageProperty("title", !empty($arCurVendor["IPROPERTY_VALUES"]["SECTION_META_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["SECTION_META_TITLE"] : $arCurVendor["NAME"]);
+	$APPLICATION->SetPageProperty("keywords", !empty($arCurVendor["IPROPERTY_VALUES"]["SECTION_META_KEYWORDS"]) ? $arCurVendor["IPROPERTY_VALUES"]["SECTION_META_KEYWORDS"] : "");
+	$APPLICATION->SetPageProperty("description", !empty($arCurVendor["IPROPERTY_VALUES"]["SECTION_META_DESCRIPTION"]) ? $arCurVendor["IPROPERTY_VALUES"]["SECTION_META_DESCRIPTION"] : "");
 else:
-	$APPLICATION->SetPageProperty("title", (!empty($arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["ELEMENT_META_TITLE"] : $arCurVendor["NAME"])." | ".Loc::getMessage("SECT_TITLE")." ".$_REQUEST["PAGEN_1"]);
+	$APPLICATION->SetPageProperty("title", (!empty($arCurVendor["IPROPERTY_VALUES"]["SECTION_META_TITLE"]) ? $arCurVendor["IPROPERTY_VALUES"]["SECTION_META_TITLE"] : $arCurVendor["NAME"])." | ".Loc::getMessage("SECT_TITLE")." ".$_REQUEST["PAGEN_1"]);
 	$APPLICATION->SetPageProperty("keywords", "");
 	$APPLICATION->SetPageProperty("description", "");
 endif;
