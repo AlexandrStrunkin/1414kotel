@@ -1,6 +1,6 @@
 <?
-$PERM["vendors"]["7"]="W";
 $PERM["reviews"]["7"]="W";
+$PERM["vendors"]["7"]="W";
 $PERM["promotions"]["7"]="W";
 $PERM["personal"]["7"]="W";
 $PERM["news"]["7"]="W";

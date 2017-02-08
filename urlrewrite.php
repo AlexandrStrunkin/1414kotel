@@ -19,6 +19,12 @@ $arUrlRewrite = array(
 		"PATH" => "/promotions/index.php",
 	),
 	array(
+		"CONDITION" => "#^/vendors/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/vendors/index.php",
+	),
+	array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
@@ -31,10 +37,10 @@ $arUrlRewrite = array(
 		"PATH" => "/reviews/index.php",
 	),
 	array(
-		"CONDITION" => "#^/vendors/#",
+		"CONDITION" => "#^/reviews/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
-		"PATH" => "/vendors/index.php",
+		"PATH" => "/article/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",

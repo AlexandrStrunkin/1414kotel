@@ -2,8 +2,8 @@
 	"bitrix:news.list", 
 	"vendors_left", 
 	array(
-		"IBLOCK_TYPE" => "iblock_filter",
-		"IBLOCK_ID" => "23",
+		"IBLOCK_TYPE" => "catalog_filter",
+		"IBLOCK_ID" => "22",
 		"NEWS_COUNT" => "10",
 		"SORT_BY1" => "SORT",
 		"SORT_ORDER1" => "ASC",
@@ -60,7 +60,9 @@
 		"PAGER_TITLE" => "Новости",
 		"PAGER_BASE_LINK_ENABLE" => "N",
 		"SHOW_404" => "N",
-		"MESSAGE_404" => ""
+		"MESSAGE_404" => "",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
 	),
 	false
 );?>
